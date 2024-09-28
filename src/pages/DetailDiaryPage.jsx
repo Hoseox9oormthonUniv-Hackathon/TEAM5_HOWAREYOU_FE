@@ -33,7 +33,6 @@ const DetailDiaryPage = () => {
       .then((res) => {
         console.log(res)
       });
-      window.location.reload();
       navigate('/')
     }
 
@@ -41,8 +40,8 @@ const DetailDiaryPage = () => {
       Apis.put("/api/v1/diary/share/"+id)
       .then((res) => {
         console.log(res)
+        window.location.reload();
       })
-      navigate('/')
     }
     
     return (
@@ -65,7 +64,7 @@ const DetailDiaryPage = () => {
               src={Back}
               alt="back"
               className="Detail--Back"
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/')}
             />
             <img
               src={Menu}

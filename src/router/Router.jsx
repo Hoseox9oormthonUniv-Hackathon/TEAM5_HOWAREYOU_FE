@@ -3,6 +3,7 @@ import MainPage from "../pages/MainPage";
 import LoginPage from "../pages/LoginPage";
 import Layout from '../components/layout/Layout'
 import DetailDiaryPage from "../pages/DetailDiaryPage";
+import DiaryListPage from "../pages/DiaryListPage";
 
 const Router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <MainPage />,
+      },
+      {
+        path: "/list",
+        element: <DiaryListPage />,
       },
     ],
   },
