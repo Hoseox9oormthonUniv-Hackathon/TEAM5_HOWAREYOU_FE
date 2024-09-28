@@ -1,0 +1,105 @@
+.Detail--Wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    font-family: Pretendard;
+}
+
+.Detail--Header {
+    display: flex;
+    flex-direction: row;
+    margin-top : 16px;
+
+    .Detail--Back {
+        margin-left: 18px;
+        margin-right : auto;
+        cursor: pointer;
+    }
+
+    .Detail--Menu {
+        margin-left: auto;
+        margin-right: 18px;
+        cursor: pointer;
+    }
+}
+
+.Detail--Diary--Img {
+    display: flex;
+    width: 320px;
+    height: 320px;
+    margin: 18px auto;
+    flex-shrink: 0;
+
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 7px 17px 0px rgba(29, 58, 88, 0.05);
+}
+
+.Detail--Title {
+    margin-left: 18px;
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.3px;
+}
+
+.Detail--Content {
+    display: -webkit-box;
+    padding: 0 16px;    
+    -webkit-box-orient: vertical;
+
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.6px;
+}
+
+.Detail--Menu--Box {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 98px;
+    height: 78px;
+    flex-shrink: 0;
+
+    border-radius: 5.756px;
+    background: #FFF;
+    box-shadow: 0px 6.5px 16px 0px rgba(29, 58, 88, 0.05);
+
+    top: 8%;
+    right: 7%;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.Detail--Menu--Item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    margin : auto 0;
+    align-items: center;
+}
+
+.Detail--About {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top : auto;
+    margin-bottom: auto;
+}
