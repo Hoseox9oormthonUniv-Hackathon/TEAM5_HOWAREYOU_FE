@@ -54,7 +54,13 @@ const MainPage = () => {
       fetchRecentList();
     }, []);
   
-    console.log(recentList)
+    const formatDate = (isoString) => {
+      const date = new Date(isoString);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1; // getMonth()는 0부터 시작하므로 1을 더해줌
+      const day = date.getDate();
+      return `${year}년 ${month}월 ${day}일`;
+    };
   return (
     <>
       {name && recentList && (
@@ -79,8 +85,7 @@ const MainPage = () => {
                   onClick={() => navigate(`/diary/${diary.diaryId}`)}
                 >
                   <div className="MainPage--Recent--Diary--Box--Date">
-                    {diary.createAt[0]}년 {diary.createAt[1]}월{" "}
-                    {diary.createAt[2]}일
+                    {formatDate(diary.createAt)}
                   </div>
                   <div className="MainPage--Recent--Diary--Box--Title">
                     {diary.title}

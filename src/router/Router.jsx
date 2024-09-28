@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import Layout from "../components/layout/Layout";
-import GenerateDiaryPage from "../pages/GenerateDiaryPage";
 
+const GenerateDiaryPage = lazy(() => import("../pages/GenerateDiaryPage"));
+const MyPage = lazy(() => import("../pages/MyPage"));
 const MainPage = lazy(() => import("../pages/MainPage"));
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const DetailDiaryPage = lazy(() => import("../pages/DetailDiaryPage"));
@@ -49,6 +50,14 @@ const Router = createBrowserRouter([
         element: (
           <Suspense>
             <DiaryListPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/my",
+        element: (
+          <Suspense>
+            <MyPage />
           </Suspense>
         ),
       },

@@ -1,4 +1,4 @@
-.DiaryList--Wrapper {
+.MyPage--Wrapper {
     display: flex;
     flex-direction: column;
 
@@ -6,28 +6,44 @@
     height: calc(100vh - 63px);
 }
 
-.DiaryList--Diary {
+.MyPage--TopText {
+    color: #737373;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: 600;
+
+    margin-top: 24px;
+    margin-left: 18px;
+}
+
+.MyPage--Diary--Wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-    flex-grow: 1;
-    overflow-y: auto;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    margin: 0 18px;
+    overflow-y: scroll;
+    gap: 15px;
+
+    margin-top: 20px;
     padding-bottom: 20px;
 }
 
-.DiaryList--Diary--Box {
-    width: calc(100% - 36px);
-    height: 159px;
-    margin: 14px 18px 0 18px;
+.MyPage--Diary--Box {
+    display: flex;
+    flex-direction: column;
+
+    width: 160px;
+    height: 140px;
     flex-shrink: 0;
 
+    border-radius: 5.222px;
     background: #FFF;
-    box-shadow: 0px 7.08px 17.7px 0px rgba(29, 58, 88, 0.05);
-    border-radius: 6.195px;
+    box-shadow: 0px 6px 15px 0px rgba(29, 58, 88, 0.05);
 }
 
-.DiaryList--Diary--Box--Date {
+.MyPage--Diary--Box--Date {
     display: flex;
     width: fit-content;
     padding: 1.5px 6px;
@@ -36,7 +52,7 @@
 
     border-radius: 3px;
     background: #E3AF38;
-
+    
     font-size: 12px;
     line-height: 150%;
 
@@ -45,17 +61,16 @@
     margin-left: 16px;
 }
 
-.DiaryList--Diary--Box--Title {
-    font-size: 18px;
+.MyPage--Diary--Box--Title {
+    font-size: 16px;
     font-weight: 700;
     line-height: 120%;
     letter-spacing: 0.3px;
 
-    margin-left: 16px;
+    margin-left : 16px;
 }
 
-
-.DiaryList--Diary--Box--Content {
+.MyPage--Diary--Box--Content {
     display: -webkit-box;
     padding: 0 16px;
     line-clamp: 3;
@@ -68,15 +83,5 @@
 
     font-size: 14px;
     letter-spacing: 0.3px;
-    margin-top: 10px;
-}
-
-.DiaryList--Diary--Box--Not {
-    color: #080808;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 140%;
-
-    margin-top: 14px;
-    margin-left: 18px;
+    margin-top: 5px;
 }
