@@ -8,6 +8,16 @@ const DiaryListPage = () => {
     const [list, setList] = useState(null);
 
     useEffect(() => {
+      if (
+        !sessionStorage.getItem(
+          "accessToken" || !sessionStorage.getItem("refreshToken")
+        )
+      ) {
+        navigate("/login");
+      }
+    }, []);
+    
+    useEffect(() => {
       const fetchList = async () => {
         const diaries = await getPublicDiaryList();
         if (diaries) {
@@ -16,6 +26,7 @@ const DiaryListPage = () => {
       };
       fetchList();
     }, [])
+
     console.log(list)
     return (
       <div className="DiaryList--Wrapper">

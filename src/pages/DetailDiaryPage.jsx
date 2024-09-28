@@ -17,6 +17,16 @@ const DetailDiaryPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
+      if (
+        !sessionStorage.getItem(
+          "accessToken" || !sessionStorage.getItem("refreshToken")
+        )
+      ) {
+        navigate("/login");
+      }
+    }, []);
+    
+    useEffect(() => {
       const fetchInfo = async () => {
         const info = await getDiaryInfo(id);
         if(info) {

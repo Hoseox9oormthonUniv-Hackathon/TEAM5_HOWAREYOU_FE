@@ -34,6 +34,11 @@ const MainPage = () => {
   const [recentList, setRecentList] = useState();
 
     useEffect(() => {
+      if(!sessionStorage.getItem('accessToken' || !sessionStorage.getItem('refreshToken'))) {
+        navigate('/login')
+      }
+    }, [])
+    useEffect(() => {
       const fetchInfo = async () => {
         const info = await getInfo(); // getInfo 호출
         if (info) {
