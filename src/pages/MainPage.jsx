@@ -37,7 +37,8 @@ const MainPage = () => {
       if(!sessionStorage.getItem('accessToken' || !sessionStorage.getItem('refreshToken'))) {
         navigate('/login')
       }
-    }, [])
+    }, []);
+
     useEffect(() => {
       const fetchInfo = async () => {
         const info = await getInfo(); // getInfo 호출
@@ -55,43 +56,51 @@ const MainPage = () => {
   
     console.log(recentList)
   return (
-    <div className="MainPage--Wrapper">
-      <div className="MainPage--TopBox">
-        <div className="MainPage--Hello">안녕하세요, {name}님</div>
-        <div className="MainPage--How">오늘 하루는</div>
-        <div className="MainPage--How">잘 보내셨나요?</div>
-        <div className="MainPage--Emotion--Block">
-          {emotionBlocks.map((block, index) => (
-            <img src={block.src} alt="" key={index} />
-          ))}
-        </div>
-      </div>
-      <div className="MainPage--Middle--Text">최근에 작성한 일기</div>
-      <div className="MainPage--Recent--Diary">
-        {recentList && recentList.length > 0 ? (
-          recentList.map((diary, index) => (
-            <div key={index} className="MainPage--Recent--Diary--Box" onClick={()=>navigate(`/diary/${diary.diaryId}`)}>
-              <div className="MainPage--Recent--Diary--Box--Date">
-                {diary.createAt[0]}년 {diary.createAt[1]}월 {diary.createAt[2]}
-                일
-              </div>
-              <div className="MainPage--Recent--Diary--Box--Title">
-                {diary.title}
-              </div>
-              <div className="MainPage--Recent--Diary--Box--Content">
-                {diary.content}
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="MainPage--Recent--Diary--Box">
-            <div className="MainPage--Recent--Diary--Box--Not">
-              존재하는 일기가 없어요!
+    <>
+      {name && recentList && (
+        <div className="MainPage--Wrapper">
+          <div className="MainPage--TopBox">
+            <div className="MainPage--Hello">안녕하세요, {name}님</div>
+            <div className="MainPage--How">오늘 하루는</div>
+            <div className="MainPage--How">잘 보내셨나요?</div>
+            <div className="MainPage--Emotion--Block">
+              {emotionBlocks.map((block, index) => (
+                <img src={block.src} alt="" key={index} />
+              ))}
             </div>
           </div>
-        )}
-      </div>
-    </div>
+          <div className="MainPage--Middle--Text">최근에 작성한 일기</div>
+          <div className="MainPage--Recent--Diary">
+            {recentList && recentList.length > 0 ? (
+              recentList.map((diary, index) => (
+                <div
+                  key={index}
+                  className="MainPage--Recent--Diary--Box"
+                  onClick={() => navigate(`/diary/${diary.diaryId}`)}
+                >
+                  <div className="MainPage--Recent--Diary--Box--Date">
+                    {diary.createAt[0]}년 {diary.createAt[1]}월{" "}
+                    {diary.createAt[2]}일
+                  </div>
+                  <div className="MainPage--Recent--Diary--Box--Title">
+                    {diary.title}
+                  </div>
+                  <div className="MainPage--Recent--Diary--Box--Content">
+                    {diary.content}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="MainPage--Recent--Diary--Box">
+                <div className="MainPage--Recent--Diary--Box--Not">
+                  존재하는 일기가 없어요!
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

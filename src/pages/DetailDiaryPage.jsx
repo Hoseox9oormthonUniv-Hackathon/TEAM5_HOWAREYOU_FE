@@ -68,40 +68,43 @@ const DetailDiaryPage = () => {
             </div>
           </div>
         )}
-        <div className="Detail--Wrapper">
-          <div className="Detail--Header">
-            <img
-              src={Back}
-              alt="back"
-              className="Detail--Back"
-              onClick={() => navigate('/')}
-            />
-            <img
-              src={Menu}
-              alt="Menu"
-              className="Detail--Menu"
-              onClick={() => setIsMenu(!isMenu)}
-            />
-          </div>
-          <img
-            src={diary && diary.imageUrl}
-            className="Detail--Diary--Img"
-            alt="img"
-          />
-          <div className="Detail--Title">{diary && diary.title}</div>
-          <div className="Detail--Content">{diary && diary.content}</div>
-          { diary &&
-            <div className="Detail--About">
-              - &nbsp;
-              <div>{diary.writer}</div>
-              &nbsp;
-              <div>
-                {diary.createAt[0]}년 {diary.createAt[1]}월 {diary.createAt[2]}일
-              </div>
-              &nbsp; -
+        {diary && (
+          <div className="Detail--Wrapper">
+            <div className="Detail--Header">
+              <img
+                src={Back}
+                alt="back"
+                className="Detail--Back"
+                onClick={() => navigate("/")}
+              />
+              <img
+                src={Menu}
+                alt="Menu"
+                className="Detail--Menu"
+                onClick={() => setIsMenu(!isMenu)}
+              />
             </div>
-          }
-        </div>
+            <img
+              src={diary && diary.imageUrl}
+              className="Detail--Diary--Img"
+              alt="img"
+            />
+            <div className="Detail--Title">{diary && diary.title}</div>
+            <div className="Detail--Content">{diary && diary.content}</div>
+            {diary && (
+              <div className="Detail--About">
+                - &nbsp;
+                <div>{diary.writer}</div>
+                &nbsp;
+                <div>
+                  {diary.createAt[0]}년 {diary.createAt[1]}월{" "}
+                  {diary.createAt[2]}일
+                </div>
+                &nbsp; -
+              </div>
+            )}
+          </div>
+        )}
       </>
     );
 };

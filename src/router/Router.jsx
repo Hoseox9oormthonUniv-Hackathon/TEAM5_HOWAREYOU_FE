@@ -1,29 +1,56 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainPage from "../pages/MainPage";
-import LoginPage from "../pages/LoginPage";
-import Layout from '../components/layout/Layout'
-import DetailDiaryPage from "../pages/DetailDiaryPage";
-import DiaryListPage from "../pages/DiaryListPage";
+import React, { Suspense, lazy } from "react";
+import Layout from "../components/layout/Layout";
+import GenerateDiaryPage from "../pages/GenerateDiaryPage";
+
+const MainPage = lazy(() => import("../pages/MainPage"));
+const LoginPage = lazy(() => import("../pages/LoginPage"));
+const DetailDiaryPage = lazy(() => import("../pages/DetailDiaryPage"));
+const DiaryListPage = lazy(() => import("../pages/DiaryListPage"));
 
 const Router = createBrowserRouter([
   {
     path: "/login",
-    element: <LoginPage />,
+    element: (
+      <Suspense>
+        <LoginPage />
+      </Suspense>
+    ),
   },
   {
     path: "/diary/:id",
-    element: <DetailDiaryPage />,
+    element: (
+      <Suspense>
+        <DetailDiaryPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/write",
+    element: (
+      <Suspense>
+        <GenerateDiaryPage />
+      </Suspense>
+    ),
   },
   {
     element: <Layout />,
     children: [
       {
         path: "/",
-        element: <MainPage />,
+        element: (
+          <Suspense>
+            <MainPage />
+          </Suspense>
+        ),
       },
       {
         path: "/list",
-        element: <DiaryListPage />,
+        element: (
+          <Suspense>
+            <DiaryListPage />
+          </Suspense>
+        ),
       },
     ],
   },
