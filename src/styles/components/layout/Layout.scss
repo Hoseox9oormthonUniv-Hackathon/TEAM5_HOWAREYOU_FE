@@ -1,0 +1,29 @@
+.Layout_Container {
+    width: 100%;
+    max-width: 450px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.Header_Container {
+    width: 100%;
+    max-width: 450px !important;
+    position: absolute;
+    background-color: #FFF;
+}
+
+.Content_Container {
+    width: 100%;
+    height: calc(100vh - 63px);
+    max-width: 450px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.Footer_Container {
+    width: 100%;
+    max-width: 450px !important;
+    position: absolute;
+    bottom: 0;
+    background-color: #FFF;
+}
