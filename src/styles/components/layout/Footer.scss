@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
 
-    box-shadow: 4px 0px 0px 4px #f9f9f9;
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.10);
 }
 
 .Footer--Menu {
@@ -16,21 +16,21 @@
 }
 
 .Footer--Menu.active {
-    color: black;
+    color: #E3AF38;
     font-weight: bold;
 }
 
 .Footer--Menu--Text {
-    color: #D9D9D9;
+    color: #000;
     margin-top: 10px;
     font-family: Pretendard;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
 }
 
 .Footer--Menu--Text.active {
-    color: #000;
+    color: #E3AF38;
 }
 
 .Footer--Menu--Icon {
