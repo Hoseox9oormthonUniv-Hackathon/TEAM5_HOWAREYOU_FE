@@ -1,0 +1,71 @@
+.Generate--Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.Generate--Back {
+    margin-top: 16px;
+    margin-left: 18px;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.Generate--Preview,
+.Generate--NoPreview {
+    display: flex;
+    flex-shrink: 0;
+    
+    width: 320px;
+    height: 320px;
+
+    margin: 17px auto 0 auto;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 7px 17px 0px rgba(29, 58, 88, 0.05);
+    cursor: pointer;
+}
+
+.Generate--Preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.Generate--Voice--Button {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% - 36px);
+    height: 45px;
+
+    margin: auto auto 22px auto;
+    border-radius: 4px;
+    background: #F1BB3B;
+
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    border: none;
+}
+
+.Generate--VoiceText {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 17px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 120%;
+}
