@@ -35,7 +35,7 @@ const LoginPage = () => {
     <div className="LoginPage--Wrapper">
       <div className="LoginPage--TextBox">
         <div className="LoginPage--TextBox--Strong">
-          <span style={{ color: "#E3AF38" }}>오늘은 뭐했어?</span>와 함께
+          <span style={{ color: "#FF9D00" }}>오늘은 뭐했어?</span>와 함께
         </div>
         <div>나만의 하루, 소중한 추억을</div>
         <div>인공지능을 사용하여</div>
